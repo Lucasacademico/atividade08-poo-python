@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Livros Disponíveis</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Livros Disponíveis</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Código</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if livros %}
+                {% for livro in livros %}
+                <tr>
+                    <td>{{ livro.titulo }}</td>
+                    <td>{{ livro.autor.nome }}</td>
+                    <td>{{ livro.codigo }}</td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="3">Nenhum livro disponível</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+        <div class="button-container">
+            <a href="{{ url_for('menu') }}"><button>Voltar ao Menu Principal</button></a>
+        </div>
+    </div>
+</body>
+
+</html>

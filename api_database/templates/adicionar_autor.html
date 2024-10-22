@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Adicionar Autor</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Adicionar Autor</h1>
+        <form method="POST">
+            <label for="nome">Nome do Autor:</label>
+            <input type="text" name="nome" id="nome" required>
+
+            <label for="livros">Livros (separados por vírgula):</label>
+            <input type="text" name="livros" id="livros">
+
+            <input type="submit" value="Adicionar Autor">
+        </form>
+        <div class="button-container">
+            <a href="{{ url_for('menu') }}"><button>Voltar ao Menu Principal</button></a>
+        </div>
+    </div>
+</body>
+
+</html>

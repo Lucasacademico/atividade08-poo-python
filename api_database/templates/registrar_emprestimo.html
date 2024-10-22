@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Registrar Empréstimo</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registrar Empréstimo</h1>
+        <form method="POST">
+            <label for="codigo_livro">Código do Livro:</label>
+            <input type="text" name="codigo_livro" id="codigo_livro" required>
+
+            <label for="cliente">Nome do Cliente:</label>
+            <input type="text" name="cliente" id="cliente" required>
+
+            <input type="submit" value="Registrar Empréstimo">
+        </form>
+        <div class="button-container">
+            <a href="{{ url_for('menu') }}"><button>Voltar ao Menu Principal</button></a>
+        </div>
+    </div>
+</body>
+
+</html>
